@@ -10,10 +10,10 @@ Requires Node.js 22 or newer, plus Python 3.9 or newer on every computer you
 collect logs from.
 
 ```sh
-npx @cynddl/ai-usage init      # generate ai-usage.toml in the current directory
-npx @cynddl/ai-usage collect   # save usage logs in usage/
-npx @cynddl/ai-usage report    # write PDFs in reports/
-npx @cynddl/ai-usage           # both collect and report
+npx github:@cynddl/ai-usage init      # generate ai-usage.toml in the current directory
+npx github:@cynddl/ai-usage collect   # save usage logs in usage/
+npx github:@cynddl/ai-usage report    # write PDFs in reports/
+npx github:@cynddl/ai-usage           # both collect and report
 ```
 
 To aggregate usage across multiple servers or virtual machines, use `ai-usage.toml`.
