@@ -1,0 +1,7 @@
+usage/
+reports/
+node_modules/
+.DS_Store
+.local/
+ai-usage.toml
+

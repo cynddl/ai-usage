@@ -1,0 +1,38 @@
+{
+  "name": "@cynddl/ai-usage",
+  "version": "0.1.0",
+  "description": "Monthly PDF reports of token usage from Claude Code, Codex, OpenCode and pi logs",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cynddl/ai-usage.git"
+  },
+  "homepage": "https://github.com/cynddl/ai-usage#readme",
+  "bugs": {
+    "url": "https://github.com/cynddl/ai-usage/issues"
+  },
+  "type": "module",
+  "bin": {
+    "ai-usage": "bin/ai-usage.mjs"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "assets/"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test",
+    "test:package": "node scripts/smoke-package.mjs"
+  },
+  "dependencies": {
+    "@myriaddreamin/typst-ts-node-compiler": "0.7.0",
+    "ccusage": "20.0.26",
+    "execa": "10.1.0",
+    "inter-font": "3.19.0",
+    "smol-toml": "1.9.0",
+    "valibot": "1.5.0"
+  }
+}

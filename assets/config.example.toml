@@ -1,0 +1,27 @@
+# Run `ai-usage` from the directory containing this file.
+
+# Time zone for daily totals.
+timezone = "Europe/London"
+
+# This computer is always included as "local". Add SSH host names or user@host below.
+# Records are saved in usage/<source>/<assistant>/<provider>/.
+ssh = []
+
+# Add custom commands that receive and run the extractor script on standard input.
+# Pass a home directory after `python3 -` to read logs outside ~.
+[commands]
+# container = "docker exec -i my-container python3 - /home/user"
+
+# We currently support the following assistants:
+# Claude, Codex, OpenCode, Pi
+# For each provider, you can add two optional account details for the report:
+# account_name = "Alex Smith"
+# account_email = "alex@example.com"
+
+[reports.anthropic]
+supplier = "Anthropic"
+match = ["claude:anthropic", "opencode:anthropic", "pi:anthropic"]
+
+[reports.openai]
+supplier = "OpenAI"
+match = ["codex:openai", "opencode:openai", "pi:openai-codex", "pi:openai"]
