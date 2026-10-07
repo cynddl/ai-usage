@@ -2,6 +2,8 @@
 
 Make monthly PDF reports of token usage from Claude Code, Codex, OpenCode and pi logs.
 
+![Example token usage report](docs/report-example.png)
+
 Licensed under [MIT](LICENSE).
 
 Requires Node.js 22 or newer, plus Python 3.9 or newer on every computer you
@@ -31,4 +33,8 @@ node ../bin/ai-usage.mjs
 ```
 
 Run `pnpm test` for tests and `pnpm test:package` to check the package after
-installation.
+installation. The package test requires Poppler (`brew install poppler` on macOS,
+or `sudo apt-get install poppler-utils` on Ubuntu/Debian).
+
+Regenerate the README image with `pnpm exec node scripts/screenshot.mjs` (also
+requires Poppler).

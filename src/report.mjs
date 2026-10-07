@@ -187,7 +187,7 @@ export function writePdf(path, data) {
 }
 
 /** Write a PDF for each report and month with usage, and return the file paths. */
-export function writeReports(rows, config, reportsDir, { log = console.error, write = writePdf } = {}) {
+export function writeReports(rows, config, reportsDir, { log = console.error, write = writePdf, now = new Date() } = {}) {
   for (const name of Object.keys(config.reports)) validateName(name);
   const { rowsByReport, unmatched } = groupReports(rows, config.reports);
   if (unmatched.length) log(`WARNING: no report matches: ${unmatched.join(", ")}`);
@@ -198,7 +198,7 @@ export function writeReports(rows, config, reportsDir, { log = console.error, wr
       if (!/^\d{4}-\d{2}$/.test(month)) throw new Error(`invalid usage month: ${month}`);
       const assistants = Object.entries(ASSISTANT_NAMES).filter(([assistant]) => monthRows.some((row) => row.assistant === assistant)).map(([, name]) => name);
       const path = outputPath(reportsDir, `${name}-${month}.pdf`);
-      write(path, prepareReport(config.reports[name], month, sumDailyUsage(monthRows), assistants, config.timezone));
+      write(path, prepareReport(config.reports[name], month, sumDailyUsage(monthRows), assistants, config.timezone, now));
       paths.push(path);
     }
   }
